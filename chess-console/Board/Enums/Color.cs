@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Board
+namespace chess_console.Board.Enums
 {
     enum Color
     {
         Black = 0,
         White = 1,
-        Red = 2, 
+        Red = 2,
         Yellow = 3
     }
 }

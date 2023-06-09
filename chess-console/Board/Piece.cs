@@ -1,4 +1,6 @@
-﻿namespace Board
+﻿using chess_console.Board.Enums;
+
+namespace Board
 {
     internal class Piece
     {
