@@ -11,7 +11,7 @@ namespace Board
         public int Rows { get; set; }
         public int Columns { get; set; }
 
-        public Piece[,]? Pieces;
+        private Piece[,]? Pieces;
 
         public ChessBoard(int rows, int columns)
         {
@@ -19,6 +19,11 @@ namespace Board
             Columns = columns;
 
             Pieces = new Piece[Rows, Columns];
+        }
+
+        public Piece ReturnPiece(int row, int column)
+        {
+            return Pieces[row, column];
         }
     }
 }

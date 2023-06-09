@@ -8,6 +8,8 @@ namespace chess_console
         {
             ChessBoard board = new ChessBoard(8, 8);
 
+            PrintChessBoard.PrintBoard(board);
+
             Console.WriteLine(board);
         }
     }
