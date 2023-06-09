@@ -25,5 +25,11 @@ namespace Board
         {
             return Pieces[row, column];
         }
+
+        public void SetPiece(Piece piece, Position position)
+        {
+            Pieces[position.Row, position.Column] = piece;
+            piece.Position = position;
+        }
     }
 }
