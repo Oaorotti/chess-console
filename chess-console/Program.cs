@@ -9,13 +9,20 @@ namespace chess_console
     {
         static void Main(string[] args)
         {
-            Console.Title = "Chess Game";
+            try
+            {
+                ChessBoard chessBoard = new ChessBoard(8, 8);
 
-            ChessPosition position = new ChessPosition('A', 1);
+                chessBoard.SetPiece(new Tower(Color.Black, chessBoard), new Position(1, 2));
+                chessBoard.SetPiece(new King(Color.White, chessBoard), new Position(1, 5));
+                chessBoard.SetPiece(new Tower(Color.Black, chessBoard), new Position(1, 6));
 
-            Console.WriteLine(position.ConvertToPosition());
+                PrintChessBoard.PrintBoard(chessBoard);
 
-            Console.WriteLine(position);
+            } catch (BoardException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
