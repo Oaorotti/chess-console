@@ -11,13 +11,21 @@ namespace chess_console
         {
             try
             {
-                ChessBoard chessBoard = new ChessBoard(8, 8);
+                ChessMatch match = new ChessMatch();
 
-                chessBoard.SetPiece(new Tower(Color.Black, chessBoard), new Position(1, 2));
-                chessBoard.SetPiece(new King(Color.White, chessBoard), new Position(1, 5));
-                chessBoard.SetPiece(new Tower(Color.Black, chessBoard), new Position(1, 6));
+                while(!match.EndMatch)
+                {
+                    Console.Clear();
+                    PrintChessBoard.PrintBoard(match.Board);
 
-                PrintChessBoard.PrintBoard(chessBoard);
+                    Console.WriteLine("Enter the origin: ");
+                    Position origin = PrintChessBoard.ReadKeyboardInput().ConvertToPosition();
+
+                    Console.WriteLine("Enter the destiny: ");
+                    Position destiny = PrintChessBoard.ReadKeyboardInput().ConvertToPosition();
+
+                    match.MakeMovement(origin, destiny);
+                }
 
             } catch (BoardException e)
             {

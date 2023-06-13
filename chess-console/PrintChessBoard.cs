@@ -1,4 +1,5 @@
 ﻿using Board;
+using Chess;
 
 namespace chess_console
 {
@@ -26,6 +27,15 @@ namespace chess_console
                 Console.WriteLine();
             }
             Console.WriteLine("  A B C D E F G H");
+        }
+
+        public static ChessPosition ReadKeyboardInput()
+        {
+            string input = Console.ReadLine();
+            char column = input[0];
+            int row = int.Parse(input[1] + "");
+
+            return new ChessPosition(column, row);
         }
 
         public static void PrintPiece(Piece piece)
